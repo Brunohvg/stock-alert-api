@@ -11,3 +11,51 @@ dependencies = [
     "sqlalchemy>=2.0.49",
 ]
 
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.12",
+    "taskipy>=1.14.1",
+    "typos>=1.45.2",
+]
+
+[tool.ruff]
+# Aumentei para 100 para evitar o erro E501 em linhas de router e dicionários
+line-length = 100
+extend-exclude = ['migrations']
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
+# Ignora o erro de "Magic Value" (PLR2004) apenas nos arquivos de teste
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PLR2004"]
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+# Configuração para o 'typos' ignorar as palavras em português que ele acusou erro
+[tool.typos.default.extend-words]
+clientes = "clientes"
+erros = "erros"
+Ative = "Ative"
+Instale = "Instale"
+ser = "ser"
+cliente = "cliente"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = '-p no:warnings'
+
+[tool.taskipy.tasks]
+pre_lint = 'typos'
+lint = 'ruff check'
+pre_format = 'ruff check --fix'
+format = 'ruff format'
+run = 'fastapi dev app/main.py'
+pre_test = 'task lint'
+test = 'pytest -s -x --cov=app -vv' # Ajustado de fast_zero para app
+post_test = 'coverage html'

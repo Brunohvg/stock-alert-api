@@ -1,13 +1,118 @@
-# Python
+# Byte-compiled / cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribuição / build
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # Virtualenv
-.venv/
-
-# Environment
 .env
+.venv
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
 
-# OS
+# Arquivos de ambiente (SEGREDO!)
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+*.pid
+*.seed
+
+# SQLite (comum em dev)
+*.sqlite3
+db.sqlite3
+
+# Test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Mypy / type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff / lint
+.ruff_cache/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Mac / Windows lixo
 .DS_Store
 Thumbs.db
+
+# Docker
+*.tar
+*.gz
+*.zip
+
+# FastAPI / Uvicorn
+*.pid
+uvicorn.log
+
+# Gunicorn
+gunicorn.log
+
+# Arquivos temporários
+tmp/
+temp/
+
+# Segurança (nunca subir)
+secrets.json
+*.pem
+*.key
+
+# Node (caso use frontend junto)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Static files (se gerados automaticamente)
+staticfiles/
+
+# Alembic (migrações)
+alembic/versions/*.pyc
+
+# PyInstaller
+*.spec
+
+# Jupyter (se usar)
+.ipynb_checkpoints

@@ -60,3 +60,5 @@ run = 'fastapi dev app/main.py'
 pre_test = 'task lint'
 test = 'pytest -s -x --cov=app -vv' # Ajustado de fast_zero para app
 post_test = 'coverage html'
+migration = 'uv run alembic revision --autogenerate -m "migração de exemplo"'
+migrate = 'uv run alembic upgrade head'

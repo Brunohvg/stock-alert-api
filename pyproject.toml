@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "alembic>=1.18.4",
     "fastapi[standard]>=0.136.1",
     "psycopg>=3.3.3",
     "pydantic-settings>=2.14.0",
@@ -22,7 +23,7 @@ dev = [
 
 [tool.ruff]
 # Aumentei para 100 para evitar o erro E501 em linhas de router e dicionários
-line-length = 100
+line-length = 150
 extend-exclude = ['migrations']
 
 [tool.ruff.lint]

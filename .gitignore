@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
-# Distribuição / build
+# Build / distribuição
 .Python
 build/
 develop-eggs/
@@ -24,8 +24,7 @@ var/
 *.egg
 
 # Virtualenv
-.env
-.venv
+.venv/
 venv/
 ENV/
 env/
@@ -33,6 +32,7 @@ env.bak/
 venv.bak/
 
 # Arquivos de ambiente (SEGREDO!)
+.env
 .env.*
 !.env.example
 
@@ -42,9 +42,10 @@ logs/
 *.pid
 *.seed
 
-# SQLite (comum em dev)
+# SQLite (dev)
 *.sqlite3
-db.sqlite3
+*.db
+database.db
 
 # Test / coverage
 htmlcov/
@@ -53,19 +54,18 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
-pytest_cache/
+.pytest_cache/
 nosetests.xml
 coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
 
-# Mypy / type checking
+# Mypy
 .mypy_cache/
 .dmypy.json
-dmypy.json
 
-# Ruff / lint
+# Ruff
 .ruff_cache/
 
 # IDE / Editor
@@ -75,7 +75,7 @@ dmypy.json
 *.swo
 *~
 
-# Mac / Windows lixo
+# OS lixo
 .DS_Store
 Thumbs.db
 
@@ -84,35 +84,29 @@ Thumbs.db
 *.gz
 *.zip
 
-# FastAPI / Uvicorn
-*.pid
+# Uvicorn / Gunicorn
 uvicorn.log
-
-# Gunicorn
 gunicorn.log
 
-# Arquivos temporários
+# Temp
 tmp/
 temp/
 
-# Segurança (nunca subir)
+# Segurança
 secrets.json
 *.pem
 *.key
 
-# Node (caso use frontend junto)
+# Node (se tiver frontend)
 node_modules/
 package-lock.json
 yarn.lock
 
-# Static files (se gerados automaticamente)
+# Static
 staticfiles/
 
-# Alembic (migrações)
-alembic/versions/*.pyc
+# Alembic
+migrations/versions/*.pyc
 
-# PyInstaller
-*.spec
-
-# Jupyter (se usar)
+# Jupyter
 .ipynb_checkpoints

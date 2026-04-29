@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
+from decimal import Decimal
 
-from sqlalchemy import Boolean, DateTime, Integer, String, func
+from sqlalchemy import Boolean, DateTime, Integer, Numeric, String, func
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database.base import Base
@@ -59,6 +60,7 @@ class StockAlert(Base):
         nullable=False,
         index=True,
     )
+    price_product: Mapped[Decimal | None] = mapped_column(Numeric(10, 2), nullable=True)
 
     variation_id: Mapped[str | None] = mapped_column(
         String(100),

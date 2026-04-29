@@ -41,6 +41,7 @@ class StockAlertService:
             external_product_id=data.external_product_id,
             variation_id=v_id,
             variation_name=data.variation_name,
+            price_product=data.price_product,
         )
 
         return self.repository.create_stock_alert(stock_alert)
